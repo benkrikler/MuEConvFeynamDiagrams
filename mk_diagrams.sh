@@ -22,8 +22,9 @@ echo Run pdflatex again
 pdflatex $@
 fi
 
-PdfFile=` sed -e 's!\.[^.]*$!!' <<<$@`.pdf
-pdfcrop "$PdfFile"
+FileKernel=` sed -e 's!\.[^.]*$!!' <<<$@`
+pdfcrop "$FileKernel".pdf
+convert -density 1000 "$FileKernel-crop.pdf" "$FileKernel".png
 
 rm -f "$TmpFile"
 rm -f "$TmpFile2"
