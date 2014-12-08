@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{feynmp}
+%\usepackage{feynmf}
+\thispagestyle{empty}
+
+\usepackage{ifpdf}
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+\makeatletter
+\def\endfmffile{%
+  \fmfcmd{\p@rcent\space the end.^^J%
+          end.^^J%
+          endinput;}%
+  \if@fmfio
+    \immediate\closeout\@outfmf
+  \fi
+  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
+  \let\thefmffile\relax
+}
+\makeatother
+
+\begin{document}
+
+\begin{fmffile}{meg2}
+\begin{fmfgraph*}(84,48) 
+\fmfpen{1}
+\fmfleft{i1,i2} 
+\fmfright{o1,o2}
+\fmf{fermion, label=$\mu$, label.side=right}{i2,v1}
+\fmf{fermion, label=$e$, label.side=right}{v3,o2}
+\fmf{photon, label=$\gamma$, label.side=right, tension=1}{v2,v4} 
+\fmfpoly{smooth,pull=1.5,filled, full, foreground=(0.5,,0.5,,0.5),tension=1}{v1,v2,v3}
+\fmf{fermion, label=$q$, label.side=right}{i1,v4}
+\fmf{fermion, label=$q$, label.side=right}{v4,o1}
+%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+%\fmflabel{$\mu$}{i1}
+\end{fmfgraph*} 
+\end{fmffile}
+
+\end{document}
