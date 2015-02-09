@@ -1,30 +1,6 @@
-\documentclass{article}
-\usepackage{feynmp}
-%\usepackage{feynmf}
-\thispagestyle{empty}
-
-\usepackage{ifpdf}
-\ifpdf
-  \DeclareGraphicsRule{*}{mps}{*}{}
-\fi
-
-\makeatletter
-\def\endfmffile{%
-  \fmfcmd{\p@rcent\space the end.^^J%
-          end.^^J%
-          endinput;}%
-  \if@fmfio
-    \immediate\closeout\@outfmf
-  \fi
-  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
-  \let\thefmffile\relax
-}
-\makeatother
-
-\begin{document}
 
 \begin{fmffile}{meg2}
-\begin{fmfgraph*}(100,100) 
+\begin{fmfgraph*}(100,100)
 \fmfpen{1}
 \fmfstraight{}
 \fmfleftn{i}{6}
@@ -40,11 +16,11 @@
 \fmf{fermion, tension=1.0}{o4,v4} % nu_mu_bar
 \fmf{fermion, tension=1.0}{o1,v2} % e+
 
-\fmf{boson, label=$Z$,label.side=left,                  tension=1.0}{v2,v3} %z
+\fmf{boson, label=$Z$,label.side=left, tension=1.0}{v2,v3} %z
 \fmf{boson, label=$W^-$,label.side=right,label.dist=0.3,tension=1.0}{v1,v3} %W-
 \fmf{boson, label=$W^-$,label.side=right,label.dist=1.7,tension=2.0}{v3,v4} %W-
 %\fmf{phantom, tension=2.0}{i1,v1}
-%\fmfpolyn{smooth,pull=0.9,phantom,  full, foreground=(0.5,,0.5,,0.5), tension=2.0}{v}{4}
+%\fmfpolyn{smooth,pull=0.9,phantom, full, foreground=(0.5,,0.5,,0.5), tension=2.0}{v}{4}
 %\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
 \fmflabel{$e^+$}{i2}
 \fmflabel{$e^-$}{i5}
@@ -52,7 +28,6 @@
 \fmflabel{$\nu_e$}{o6}
 \fmflabel{$\bar{\nu}_\mu$}{o4}
 \fmflabel{$\mu^-$}{o3}
-\end{fmfgraph*} 
+\end{fmfgraph*}
 \end{fmffile}
 
-\end{document}
