@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{feynmp}
+%\usepackage{feynmf}
+\thispagestyle{empty}
+
+\usepackage{ifpdf}
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+\makeatletter
+\def\endfmffile{%
+  \fmfcmd{\p@rcent\space the end.^^J%
+          end.^^J%
+          endinput;}%
+  \if@fmfio
+    \immediate\closeout\@outfmf
+  \fi
+  \IfFileExists{\thefmffile.mp}{\immediate\write18{mpost \thefmffile}}{}
+  \let\thefmffile\relax
+}
+\makeatother
+
+\begin{document}
+
+\begin{fmffile}{meg2}
+\begin{fmfgraph*}(84,48) 
+\fmfpen{1}
+\fmfstraight{}
+\fmfleftn{i}{3}
+\fmfrightn{o}{3}
+\fmf{fermion, tension=2.0}{i2,v1}
+%\fmf{phantom, tension=2.0}{i1,v1}
+\fmf{fermion, tension=1.0}{v2,o1} 
+\fmf{fermion, tension=1.0}{v3,o2}
+\fmf{fermion, tension=1.0}{v4,o3} 
+\fmfpolyn{smooth,pull=0.9,phantom,  full, foreground=(0.5,,0.5,,0.5), tension=2.0}{v}{4}
+%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+\fmflabel{$\mu^+$}{i2}
+\fmflabel{$e^+$}{o1}
+\fmflabel{$e^-$}{o2}
+\fmflabel{$e^+$}{o3}
+\end{fmfgraph*} 
+\end{fmffile}
+
+\end{document}
