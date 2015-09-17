@@ -34,6 +34,8 @@ fi
 FileKernel=` sed -e 's!\.[^.]*$!!' <<< "$InFile"`
 OutFileKernel=` sed -e 's!\.[^.]*$!!' <<< "$1"`
 pdfcrop "$FileKernel".pdf
+#pdftops "$FileKernel"-crop.pdf $OutFileKernel.ps
+pdf2svg "$FileKernel-crop.pdf" "$OutFileKernel".svg
 convert -density 1000 "$FileKernel-crop.pdf" "$OutFileKernel".png
 
 rm -f "$TmpFile"
