@@ -1,0 +1,24 @@
+\mbox{
+\begin{fmffile}{muec_nu}
+\begin{fmfgraph*}(130,40)
+\fmfpen{thin}
+\fmfstraight{}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{fermion,label=$\mu^-$,label.side=up}{i2,v1}
+\fmf{fermion,label=$e^-$,label.side=up}{v2,o2}
+\fmf{fermion}{v1,v3}
+\fmf{fermion}{v3,v2}
+\fmffreeze{}
+\fmf{fermion,label=$q$,label.side=left}{v6,o1}
+\fmf{fermion,label=$q$,label.side=left}{i1,v5}
+\fmf{plain}{v4,v5}
+\fmf{plain}{v6,v4}
+\fmffreeze{}
+\fmf{photon,label=$Z^0$,label.side=right}{v3,v4}
+\fmf{photon,label=$W^-$,left=0.7, tension=0.2, label.side=up}{v1,v2}
+%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+\fmflabel{$\nu$}{v3}
+\end{fmfgraph*}
+\end{fmffile}
+}
