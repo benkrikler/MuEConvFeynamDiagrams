@@ -1,0 +1,31 @@
+
+\mbox{
+\begin{fmffile}{muec_nu}
+\begin{fmfgraph*}(130,100)
+\fmfpen{thin}
+\fmfstraight{}
+\fmfleftn{i}{4}
+\fmfrightn{o}{4}
+\fmf{fermion,label=$\mu$,label.side=up}{i2,v1}
+\fmf{fermion,label=$e$,label.side=up}{v2,o2}
+\fmf{boson,tension=2}{v1,v3}
+\fmf{boson,tension=2}{v3,v2}
+\fmf{phantom,tension=0,label=$W^-$,label.side=left,right=0.3}{v3,v2}
+\fmffreeze{}
+\fmf{fermion,label=$q$,label.side=left}{v6,o1}
+\fmf{fermion,label=$q$,label.side=left}{i1,v5}
+\fmf{plain}{v4,v5}
+\fmf{plain}{v6,v4}
+\fmffreeze{}
+\fmf{photon,label=$\gamma$,label.side=right}{v3,v4}
+\fmf{phantom}{v8,o3}
+\fmf{fermion,tension=0.6}{v2,v8}
+\fmflabel{$\bar{\nu_e}$}{v8}
+\fmffreeze{}
+\fmf{phantom}{v7,o4}
+\fmf{fermion,label=$\nu_\mu$,label.side=left,tension=2}{v1,v7}
+%\fmf{fermion,label=$\nu,,N,,\tilde{\chi}^0$,left=0.7, tension=0.2, label.side=up}{v1,v2}
+%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+\end{fmfgraph*}
+\end{fmffile}
+}

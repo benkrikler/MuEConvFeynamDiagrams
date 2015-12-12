@@ -1,0 +1,23 @@
+\mbox{
+\begin{fmffile}{muec_nu}
+\begin{fmfgraph*}(130,40)
+\fmfpen{thin}
+\fmfstraight{}
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmf{fermion,label=$\mu^-$,label.side=left}{i2,v1}
+\fmf{fermion,label=$e^-$,label.side=left}{v2,o2}
+\fmf{phantom}{v1,v2}
+%\fmffreeze{}
+\fmf{fermion,label=$u$,label.side=down}{v2,o1}
+\fmf{fermion,label=$u$,label.side=down}{i1,v1}
+%\fmffreeze{}
+\fmf{fermion,label=$\nu$,label.side=left,left=0.5,tension=0.5}{v1,v2}
+\fmf{fermion,label=$d(s,,b)$,label.side=down,right=0.5,tension=0.5}{v1,v2}
+\fmfv{decor.shape=circle,decor.size=.05w, fill}{v1}
+\fmfv{decor.shape=circle,decor.size=.05w, fill}{v2}
+\fmflabel{$G_F$}{v1}
+\fmflabel{$G_F$}{v2}
+\end{fmfgraph*}
+\end{fmffile}
+}
