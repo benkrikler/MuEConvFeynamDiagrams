@@ -6,4 +6,6 @@
 *.1
 *.mp
 *.t1
-.*swp
+.*.swp
+.*.swo
+current.tex
