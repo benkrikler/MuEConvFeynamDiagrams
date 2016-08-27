@@ -12,6 +12,8 @@ fi
 rm -f current.tex
 ln -sf "$1" current.tex
 
+mkdir -p pdfs pngs svgs
+
 InFile="preamble.tex"
 
 TmpFile=`mktemp`
@@ -35,11 +37,15 @@ FileKernel=` sed -e 's!\.[^.]*$!!' <<< "$InFile"`
 OutFileKernel=` sed -e 's!\.[^.]*$!!' <<< "$1"`
 pdfcrop "$FileKernel".pdf
 #pdftops "$FileKernel"-crop.pdf $OutFileKernel.ps
-pdf2svg "$FileKernel-crop.pdf" "$OutFileKernel".svg
-convert -density 1000 "$FileKernel-crop.pdf" "$OutFileKernel".png
-mv -f "$FileKernel-crop.pdf" "$OutFileKernel".pdf
+pdf2svg "$FileKernel-crop.pdf" svgs/"$OutFileKernel".svg
+convert -density 1000 "$FileKernel-crop.pdf" pngs/"$OutFileKernel".png
+mv -f "$FileKernel-crop.pdf" pdfs/"$OutFileKernel".pdf
 
-mv $FileKernel-crop.pdf $OutFileKernel.pdf
-rm -f "$FileKernel"{.png,.svg,.pdf,.log,.aux}
+for i in "$FileKernel".*;do
+	[[ "$i" == *tex ]] && continue;
+	echo Deleting aux: $i
+	rm -f $i
+done
+#rm -f "$FileKernel"{.png,.svg,.pdf,.log,.aux,.mp,.1}
 rm -f "$TmpFile"
 rm -f "$TmpFile2"
