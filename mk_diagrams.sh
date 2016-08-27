@@ -37,7 +37,8 @@ pdfcrop "$FileKernel".pdf
 #pdftops "$FileKernel"-crop.pdf $OutFileKernel.ps
 pdf2svg "$FileKernel-crop.pdf" "$OutFileKernel".svg
 convert -density 1000 "$FileKernel-crop.pdf" "$OutFileKernel".png
+mv -f "$FileKernel-crop.pdf" "$OutFileKernel".pdf
 
-rm -f "$FileKernel"{.png,.svg,.pdf,-crop.pdf,.log,.aux}
+rm -f "$FileKernel"{.png,.svg,.pdf,.log,.aux}
 rm -f "$TmpFile"
 rm -f "$TmpFile2"
