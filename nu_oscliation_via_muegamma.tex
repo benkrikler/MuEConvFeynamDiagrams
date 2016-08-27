@@ -1,0 +1,33 @@
+\begin{fmffile}{meg2}
+\begin{fmfgraph*}(200,200)
+\fmfpen{1}
+\fmfstraight{}
+\fmfleftn{i}{3}
+\fmfrightn{o}{3}
+\fmf{fermion, label=$\nu_\mu$, label.side=right}{i2,v1}
+\fmf{fermion, label=$\nu_e$, label.side=right}{v2,o2}
+\fmf{phantom, tension=0.5}{v1,v2}
+\fmffreeze{}
+\fmf{phantom, tension=1}{i3,v3}
+\fmf{phantom, tension=1}{v3,o3}
+\fmf{phantom, tension=0.8}{i1,v5}
+\fmf{phantom, tension=0.8}{v6,o1}
+
+\fmf{boson, label=$W^+$,label.side=left,left=0.3}{v1,v3}
+\fmf{boson, label=$W^+$,label.side=left,left=0.3}{v3,v2}
+\fmf{boson, label=$\gamma$,right=0.1,tension=3}{v3,v7}
+
+\fmf{fermion, label=$\mu^-$, label.side=right,right=0.2}{v1,v5}
+\fmf{fermion, label=$e^-$, label.side=right,right=0.2}{v6,v2}
+\fmfpoly{smooth,pull=0.9,tension=3,phantom,  full, foreground=(0.5,,0.5,,0.5)}{v5,v6,v7}
+
+%\fmf{fermion, label=$q$, label.side=right}{i1,v2}
+%\fmf{fermion, label=$\mu$, label.side=right}{i2,v1}
+%\fmf{fermion, label=$q$, label.side=right}{v3,o1}
+%\fmf{fermion, label=$e$, label.side=right}{v4,o2}
+%\fmfpolyn{smooth,pull=0.9,phantom,  full, foreground=(0.5,,0.5,,0.5)}{v}{4}{}
+%%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+%%\fmflabel{$\mu$}{i1}
+\end{fmfgraph*}
+\end{fmffile}
+

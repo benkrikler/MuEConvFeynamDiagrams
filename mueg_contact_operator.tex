@@ -1,0 +1,24 @@
+
+\begin{fmffile}{meg2}
+\begin{fmfgraph*}(80,70)
+\fmfpen{1}
+\fmfleft{i1,i2,i3}
+\fmfright{o1,o2,o3}
+%\fmf{phantom}{i2,v2}
+%\fmf{phantom}{v2,o2}
+%\fmffreeze{}
+\fmf{fermion, label=$\mu$,label.side=left,tension=1.1}{i3,v1}
+\fmf{fermion, label=$e$,label.side=left,tension=1.1}{v1,o3}
+\fmfv{decor.shape=circle,decor.size=.09w, fill,foreground=(0.5,,0.5,,0.5)}{v1}
+
+%\fmf{phantom,tension=1.0}{i1,v2}
+\fmf{fermion, label=$q$,label.side=left,left,tension=0.6,pull=-3}{v2,v1}
+\fmf{fermion, label=$q$,label.side=left,left,tension=0.6,pull=3}{v1,v2}
+
+\fmf{photon, label=$\gamma$, label.side=right, tension=2}{v2,v3}
+\fmf{phantom,tension=0.5 }{i1,v3}
+\fmf{phantom,tension=1.5 }{v3,o1}
+%\fmflabel{$\mu$}{i1}
+\end{fmfgraph*}
+\end{fmffile}
+

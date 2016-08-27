@@ -1,0 +1,18 @@
+
+\begin{fmffile}{meg2}
+\begin{fmfgraph*}(84,70)
+\fmfpen{1}
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+\fmf{fermion, label=$\mu$, label.side=right,tension=1.4}{i2,v1}
+\fmf{fermion, label=$e$, label.side=right}{v1,o2}
+\fmfv{decor.shape=circle,decor.size=.09w, fill,foreground=(0.5,,0.5,,0.5)}{v1}
+\fmf{photon, label=$\gamma$, label.side=right, tension=1}{v1,v4}
+\fmf{phantom,tension=0.5 }{i1,v4}
+\fmf{phantom,tension=1.5 }{v4,o1}
+%\fmfv{decor.shape=triagram,decor.size=.15w, d.f=50}{v1}
+%\fmfpoly{smooth,filled, full, foreground=(0.5,,0.5,,0.5),tension=2}{v1,v2,v3}
+%\fmflabel{$\mu$}{i1}
+\end{fmfgraph*}
+\end{fmffile}
+
