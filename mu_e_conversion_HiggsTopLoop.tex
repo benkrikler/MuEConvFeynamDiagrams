@@ -1,6 +1,7 @@
 
 \begin{fmffile}{meg2}
-\begin{fmfgraph*}(100,70)
+%\begin{fmfgraph*}(100,70)
+\begin{fmfgraph*}(130,50)
 \fmfpen{1}
 \fmfstraight{}
 \fmfleftn{i}{2}
@@ -9,13 +10,13 @@
 \fmf{fermion, label=$e$, label.side=left}{v1,v2}
 \fmf{fermion, label=$e$, label.side=left}{v2,o2}
 \fmffreeze{}
-\fmf{fermion, label=$q$, label.side=right}{i1,v3}
-\fmf{fermion, label=$q$, label.side=right}{v3,o1}
+\fmf{fermion, label=$q$, label.side=left}{i1,v3}
+\fmf{fermion, label=$q$, label.side=left}{v3,o1}
 \fmffreeze{}
 \fmf{dashes, label=$H^0$, label.side=right,tension=0.5}{v1,v4}
 \fmf{boson, label=$\gamma$, label.side=left,tension=0.5}{v2,v5}
 \fmf{boson, label=$\gamma$, label.side=right,tension=1}{v6,v3}
-\fmfpoly{plain_arrow,label=$q$,tension=0.175}{v6,v5,v4}
+\fmfpoly{plain_arrow,label=$q$,tension=0.3}{v6,v5,v4}
 %\fmf{fermion, label=$t$, label.side=right}{v4,v5}
 %\fmf{fermion, label=$t$, label.side=right}{v6,v5}
 %\fmf{fermion, label=$t$, label.side=right}{v6,v5}
